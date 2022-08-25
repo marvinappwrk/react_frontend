@@ -41,12 +41,29 @@ class App extends Component {
             Marvin Demo
           </a>
           <div className="navbar-nav mr-auto">
+            
             <li className="nav-item">
+            <a
+              className="nav-link"
+              href={"/tutorials"}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Tutorials
+            </a>
               {/* <Link to={"/tutorials"} className="nav-link">
                 Tutorials
               </Link> */}
             </li>
             <li className="nav-item">
+            <a
+              className="nav-link"
+              href={"/add"}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Add
+            </a>
               {/* <Link to={"/add"} className="nav-link">
                 Add
               </Link> */}
