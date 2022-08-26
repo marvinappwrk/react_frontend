@@ -45,7 +45,7 @@ class App extends Component {
             <li className="nav-item">
             <a
               className="nav-link"
-              href={"/tutorials"}
+              href={"/"}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -74,8 +74,10 @@ class App extends Component {
         <Router>
             <Routes>
               <Route exact path="/" element={<TutorialsList/>} />
+              {/* <Route exact path="/tutorials" element={<Tutorial/>} /> */}
               <Route path="/add" element={<AddTutorial/>} />
               <Route path="/tutorials/:id" element={<Tutorial/>} />
+              {/* <Route path="/tutorials" element={<Tutorial/>} /> */}
             </Routes>
           </Router>
         </div>

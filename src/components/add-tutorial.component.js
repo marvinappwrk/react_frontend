@@ -57,14 +57,19 @@ class AddTutorial extends Component {
     return (
         <div className="submit-form">
           {this.state.submitted ? (
-            <div>
-              <h4>You submitted successfully!</h4>
-              <button className="btn btn-success" onClick={this.newTutorial}>
+            <div className="form-control">
+              <h4 className="text-center">New tutorial created successfully!</h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <center><button className="btn btn-success" onClick={this.newTutorial}>
                 Add
               </button>
+              {/* <button className="btn btn-success" onClick={"/tutorials"}>
+                Listing
+              </button> */}
+              </center>
             </div>
           ) : (
-            <div>
+            <div className="form-border">
+              <h4 className="text-center">Add New Tutorial</h4>
               <div className="form-group">
                 <label htmlFor="title">Title</label>
                 <input
@@ -76,7 +81,7 @@ class AddTutorial extends Component {
                   onChange={this.onChangeTitle}
                   name="title"
                 />
-              </div>
+              </div>&nbsp;&nbsp;
               <div className="form-group">
                 <label htmlFor="description">Description</label>
                 <input
@@ -88,10 +93,10 @@ class AddTutorial extends Component {
                   onChange={this.onChangeDescription}
                   name="description"
                 />
-              </div>
-              <button onClick={this.saveTutorial} className="btn btn-success">
+              </div>&nbsp;&nbsp;
+              <center><button onClick={this.saveTutorial} className="btn btn-success">
                 Submit
-              </button>
+              </button></center>
             </div>
           )}
         </div>

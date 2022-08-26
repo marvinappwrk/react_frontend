@@ -103,6 +103,7 @@ class Tutorial extends Component {
   }
   render() {
     const { currentTutorial } = this.state;
+    console.log(this.state);
     return (
       <div>
         {currentTutorial ? (

@@ -32,16 +32,27 @@
   text-align: left;
   max-width: 750px;
   margin: auto;
+  border-style: dotted;
+  border-color: blue;
+  padding: 80px;
+  background-color: lightblue;
 }
 .submit-form {
-  max-width: 300px;
-  margin: auto;
+  max-width: 400px;
+  margin: 250px 400px;
+  box-sizing: border-box;
 }
 .edit-form {
   max-width: 300px;
   margin: auto;
 }
 
+.form-border{
+  border-style: dotted;
+  border-color: blue;
+  padding: 80px;
+  background-color: lightblue;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

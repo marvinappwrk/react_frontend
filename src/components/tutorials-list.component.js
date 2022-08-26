@@ -55,10 +55,11 @@ class TutorialsList extends Component {
   }
   render() {
     const { searchTitle, currentTutorial, currentIndex } = this.state;
-    const { tutorials } = this.props;
+    const tutorials = this.props.tutorials.data;
+  // console.log(tutorials)
     return (
       <div className="list row">
-        <div className="col-md-8">
+        {/* <div className="col-md-8">
           <div className="input-group mb-3">
             <input
               type="text"
@@ -77,30 +78,30 @@ class TutorialsList extends Component {
               </button>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="col-md-6">
           <h4>Tutorials List</h4>
           <ul className="list-group">
             {tutorials &&
-              tutorials.map((tutorial, index) => (
+              tutorials.map((data, index) => (
                 <li
                   className={
                     "list-group-item " +
                     (index === currentIndex ? "active" : "")
                   }
-                  onClick={() => this.setActiveTutorial(tutorial, index)}
+                  onClick={() => this.setActiveTutorial(data, index)}
                   key={index}
-                >
-                  {tutorial.title}
-                </li>
+                >     
+            <p>{data.id}</p>           
+            </li>
               ))}
           </ul>
-          <button
+          {/* <button
             className="m-3 btn btn-sm btn-danger"
             onClick={this.removeAllTutorials}
           >
             Remove All
-          </button>
+          </button> */}
         </div>
         <div className="col-md-6">
           {currentTutorial ? (
@@ -108,15 +109,21 @@ class TutorialsList extends Component {
               <h4>Tutorial</h4>
               <div>
                 <label>
+                  <strong>ID:</strong>
+                </label>{" "}
+                {currentTutorial.id ? currentTutorial.id : "N/A"}
+              </div>
+              <div>
+                <label>
                   <strong>Title:</strong>
                 </label>{" "}
-                {currentTutorial.title}
+                {currentTutorial.title ? currentTutorial.title : "N/A"}
               </div>
               <div>
                 <label>
                   <strong>Description:</strong>
                 </label>{" "}
-                {currentTutorial.description}
+                {currentTutorial.description ? currentTutorial.description  : "N/A"}
               </div>
               <div>
                 <label>
@@ -124,12 +131,26 @@ class TutorialsList extends Component {
                 </label>{" "}
                 {currentTutorial.published ? "Published" : "Pending"}
               </div>
-              <Link
+              <a
+              className="m-3 btn btn-sm btn-warning"
+              href={"/tutorials/" + currentTutorial.id}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Edit
+            </a>
+              {/* <Link
                 to={"/tutorials/" + currentTutorial.id}
                 className="badge badge-warning"
               >
                 Edit
-              </Link>
+              </Link> */}
+              {/* <button
+            className="m-3 btn btn-sm btn-warning"
+            onClick={"/tutorials/" + currentTutorial.id}
+          >
+            Edit
+          </button> */}
             </div>
           ) : (
             <div>
